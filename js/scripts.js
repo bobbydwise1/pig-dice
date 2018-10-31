@@ -13,18 +13,24 @@ GameGroup.prototype.assignId = function () {
   return this.currentID
 }
 
+// Checks to see if player's turn is over. If yes, it sets the next player's turn to 'true'
 GameGroup.prototype.turnCheck = function(player) {
-  console.log(this.pigplayers.length);
+  if (player.id === this.pigplayers.length) {
+    if (player.turnStatus === false) {
+        this.pigplayers[0].turnStatus = true;
+        return "";
+    }
+  }
+
   for (var i = (player.id-1); i < this.pigplayers.length; i++) {
     console.log(i);
-    if (player.turnStatus === true) {
+    if (player.turnStatus === false) {
         this.pigplayers[i+1].turnStatus = true;
         console.log(this);
-        return;
+        return "";
     }
   }
 }
-
 
 function Player(totalScore, roundScore, diceRollResult, turnStatus) {
   this.totalScore = totalScore,
@@ -33,10 +39,10 @@ function Player(totalScore, roundScore, diceRollResult, turnStatus) {
   this.turnStatus = turnStatus
 }
 
-Player.prototype.rollDice = function() {
+Player.prototype.rollDice = function(group) {
   if (this.turnStatus === false) {
     console.log("Hey! It's not your turn yet.")
-    return;
+    return "";
   }
 
   var protoDiceResult = Math.floor(Math.random()*6)+1;
@@ -45,40 +51,54 @@ Player.prototype.rollDice = function() {
     this.roundScore = 0;
     this.turnStatus = false;
     this.diceRollResult = 0;
-    console.log(protoDiceResult);
+    group.turnCheck(this);
     console.log("sorry, your turn is over");
+    console.log("You rolled a " + protoDiceResult);
+    console.log("Your round score is: " + this.roundScore);
+    console.log("Your Total score is: " + this.totalScore);
+    return "";
   } else {
     this.diceRollResult = protoDiceResult;
     this.roundScore += this.diceRollResult;
-    console.log(protoDiceResult);
+    console.log("You rolled a " + protoDiceResult);
+    console.log("Your round score is: " + this.roundScore);
+    console.log("Your Total score is: " + this.totalScore);
+    return "";
   }
 }
 
-Player.prototype.playerHold = function () {
+Player.prototype.playerHold = function (group) {
+  if (this.turnStatus === false) {
+    console.log("Hey! It's not your turn yet.");
+    return "";
+  }
   this.totalScore += this.roundScore;
   this.roundScore = 0;
   this.diceRollResult = 0;
-  if (this.totalScore >= 100) {
+  this.turnStatus = false;
+  group.turnCheck(this);
+  if (this.totalScore >= 30) {
     console.log("You won the game!")
   } else {
     this.turnStatus = false;
+    return "";
   }
 }
 
 /*These vars are for testing purposes*/
 var player1 = new Player(0,0,0,true);
 var player2 = new Player(0,0,0,false);
-var player3 = new Player(0,0,0,false);
-var player4 = new Player(0,0,0,false);
+// var player3 = new Player(0,0,0,false);
+// var player4 = new Player(0,0,0,false);
+// var player5 = new Player(0,0,0,false);
 
 var pigGame = new GameGroup();
 
 pigGame.addPlayer(player1);
 pigGame.addPlayer(player2);
-pigGame.addPlayer(player3);
-pigGame.addPlayer(player4);
-
-
+// pigGame.addPlayer(player3);
+// pigGame.addPlayer(player4);
+// pigGame.addPlayer(player5);
 
 function turnCheck() {
   for (var i = 0; i < playerArray.length; i++) {
@@ -86,7 +106,15 @@ function turnCheck() {
     if (playerArray[i].turnStatus === false) {
         playerArray[i+1].turnStatus = true;
         console.log(playerArray[i+1].turnStatus);
-        return;
+        return "";
     }
   }
 }
+
+
+$(document).ready(function() {
+
+
+
+
+});
