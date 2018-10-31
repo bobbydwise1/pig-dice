@@ -1,3 +1,7 @@
+body {
+  text-align: center;
+}
+
 .players-window {
   border: 2px solid black;
 }

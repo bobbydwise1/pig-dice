@@ -39,6 +39,8 @@ function Player(totalScore, roundScore, diceRollResult, turnStatus) {
   this.turnStatus = turnStatus
 }
 
+var diceShowUI = 0;
+
 Player.prototype.rollDice = function(group) {
   if (this.turnStatus === false) {
     console.log("Hey! It's not your turn yet.")
@@ -46,6 +48,7 @@ Player.prototype.rollDice = function(group) {
   }
 
   var protoDiceResult = Math.floor(Math.random()*6)+1;
+  diceShowUI = protoDiceResult;
 
   if (protoDiceResult === 1) {
     this.roundScore = 0;
@@ -77,7 +80,7 @@ Player.prototype.playerHold = function (group) {
   this.diceRollResult = 0;
   this.turnStatus = false;
   group.turnCheck(this);
-  if (this.totalScore >= 30) {
+  if (this.totalScore >= 100) {
     console.log("You won the game!")
   } else {
     this.turnStatus = false;
@@ -85,17 +88,9 @@ Player.prototype.playerHold = function (group) {
   }
 }
 
-/*These vars are for testing purposes*/
-// var player1 = new Player(0,0,0,true);
-// var player2 = new Player(0,0,0,false);
-//
 var pigGame = new GameGroup();
-//
-// pigGame.addPlayer(player1);
-// pigGame.addPlayer(player2);
 
 var groupNumber = 0;
-
 
 function initializePlayers() {
   for (var i = 0; i < groupNumber; i++) {
@@ -108,11 +103,10 @@ function initializePlayers() {
   }
 }
 
-// function createPigGameArray(numberPlayers) {
-//   for (index = 0; index < numberPlaeyrs; index++) {
-//     var
-//   }
-// }
+GameGroup.prototype.reset = function() {
+  this.currentID = 0;
+  this.pigplayers = [];
+}
 
 function turnCheck() {
   for (var i = 0; i < playerArray.length; i++) {
@@ -136,6 +130,7 @@ $(document).ready(function() {
 
   $("#playerSelect").submit(function(event) {
     event.preventDefault();
+    pigGame.reset();
     var numberPlayers = $("#selectNumberPlayers").val();
     console.log("Number of Players is: " + numberPlayers);
 
@@ -144,9 +139,12 @@ $(document).ready(function() {
 
     if(numberPlayers === "2") {
       $(".twoPlayerView").show();
+      $("#threePlayerView").hide();
+      $("#fourPlayerView").hide();
     } else if (numberPlayers === "3") {
       $(".twoPlayerView").show();
       $("#threePlayerView").show();
+      $("#fourPlayerView").hide();
     } else if (numberPlayers === "4") {
       $(".twoPlayerView").show();
       $("#threePlayerView").show();
@@ -158,43 +156,53 @@ $(document).ready(function() {
 
   $("form").on("click", "button#player1-Roll", function() {
     pigGame.pigplayers[0].rollDice(pigGame);
+
+$("#show-dice").text(diceShowUI);
+
     $("span#output-player1-round-score").text(pigGame.pigplayers[0].roundScore);
     $("span#output-player1-total-score").text(pigGame.pigplayers[0].totalScore);
   });
   $("form").on("click", "button#player1-Hold", function() {
+    $("#show-dice").text(diceShowUI);
     pigGame.pigplayers[0].playerHold(pigGame);
     $("span#output-player1-round-score").text(pigGame.pigplayers[0].roundScore);
     $("span#output-player1-total-score").text(pigGame.pigplayers[0].totalScore);
   });
 
   $("form").on("click", "button#player2-Roll", function() {
+    $("#show-dice").text(diceShowUI);
     pigGame.pigplayers[1].rollDice(pigGame);
     $("span#output-player2-round-score").text(pigGame.pigplayers[1].roundScore);
     $("span#output-player2-total-score").text(pigGame.pigplayers[1].totalScore);
   });
   $("form").on("click", "button#player2-Hold", function() {
+    $("#show-dice").text(diceShowUI);
     pigGame.pigplayers[1].playerHold(pigGame);
     $("span#output-player2-round-score").text(pigGame.pigplayers[1].roundScore);
     $("span#output-player2-total-score").text(pigGame.pigplayers[1].totalScore);
   });
 
   $("form").on("click", "button#player3-Roll", function() {
+    $("#show-dice").text(diceShowUI);
     pigGame.pigplayers[2].rollDice(pigGame);
     $("span#output-player3-round-score").text(pigGame.pigplayers[2].roundScore);
     $("span#output-player3-total-score").text(pigGame.pigplayers[2].totalScore);
   });
   $("form").on("click", "button#player3-Hold", function() {
+    $("#show-dice").text(diceShowUI);
     pigGame.pigplayers[2].playerHold(pigGame);
     $("span#output-player3-round-score").text(pigGame.pigplayers[2].roundScore);
     $("span#output-player3-total-score").text(pigGame.pigplayers[2].totalScore);
   });
 
   $("form").on("click", "button#player4-Roll", function() {
+    $("#show-dice").text(diceShowUI);
     pigGame.pigplayers[3].rollDice(pigGame);
     $("span#output-player4-round-score").text(pigGame.pigplayers[3].roundScore);
     $("span#output-player4-total-score").text(pigGame.pigplayers[3].totalScore);
   });
   $("form").on("click", "button#player4-Hold", function() {
+    $("#show-dice").text(diceShowUI);
     pigGame.pigplayers[3].playerHold(pigGame);
     $("span#output-player4-round-score").text(pigGame.pigplayers[3].roundScore);
     $("span#output-player4-total-score").text(pigGame.pigplayers[3].totalScore);

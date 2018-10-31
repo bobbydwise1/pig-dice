@@ -14,7 +14,6 @@
   <body>
     <h1>Pig Dice</h1>
     <p>Insert Text Here for Rules</p>
-
     <form id="playerSelect">
       <select class="form-control" id="selectNumberPlayers">
         <option value="2">2</option>
@@ -22,8 +21,10 @@
         <option value="4">4</option>
       </select>
     <button id="playerSelectButton" type="submit" class="btn btn-warning" value="Submit">Submit</button>
+    <h2>Dice Roll:</h2>
+    <p id="show-dice">???</p>
     </form>
-
+    <div class="container" id=>
       <div class="container players-window player-window-1 twoPlayerView">
         <p>Player 1</p>
         <p>Round Score: <span id="output-player1-round-score"></span></p>
@@ -60,6 +61,6 @@
           <button id="player4-Hold"  type="button" class="btn btn-success" value="HOLD">Hold Score</button>
         </form>
       </div>
-
+    </div>
   </body>
 </html>
