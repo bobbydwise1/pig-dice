@@ -113,6 +113,37 @@ function turnCheck() {
 
 
 $(document).ready(function() {
+  $("form").on("click", "button#player1-Roll", function() {
+    console.log("p1 rolled!");
+    player1.rollDice(pigGame);
+
+    $("span#output-player1-round-score").text(player1.roundScore);
+    $("span#output-player1-total-score").text(player1.totalScore);
+  });
+  $("form").on("click", "button#player1-Hold", function() {
+    console.log("p1 hold!");
+    player1.playerHold(pigGame);
+
+    $("span#output-player1-round-score").text(player1.roundScore);
+    $("span#output-player1-total-score").text(player1.totalScore);
+  });
+  $("form").on("click", "button#player2-Roll", function() {
+    console.log("p1 rolled!");
+    player2.rollDice(pigGame);
+    $("span#output-player2-round-score").text(player2.roundScore);
+    $("span#output-player2-total-score").text(player2.totalScore);
+  });
+  $("form").on("click", "button#player2-Hold", function() {
+    console.log("p1 hold!");
+    player2.playerHold(pigGame);
+    $("span#output-player2-round-score").text(player2.roundScore);
+    $("span#output-player2-total-score").text(player2.totalScore);
+  });
+
+
+
+
+
 
 
 

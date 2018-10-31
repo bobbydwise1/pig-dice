@@ -14,16 +14,24 @@
   <body>
     <h1>Pig Dice</h1>
     <p>Insert Text Here for Rules</p>
-      <div class="container player1-window">
-        <p>Player 1:</p>
-        <p>Round Score:</p>
-        <p>Total Score:</p>
+      <div class="container players-window">
+        <p>Player 1</p>
+        <p>Round Score: <span id="output-player1-round-score"></span></p>
+        <p>Total Score: <span id="output-player1-total-score"></span></p>
         <form id="btn-Player-1">
-          <button type="button" class="btn btn-danger" value="ROLL">Roll Dice</button>
-          <button type="button" class="btn btn-success" value="HOLD">Hold Score</button>
+          <button id="player1-Roll" type="button" class="btn btn-danger" value="ROLL">Roll Dice</button>
+          <button id="player1-Hold" type="button" class="btn btn-success" value="HOLD">Hold Score</button>
         </form>
       </div>
-
+      <div class="container players-window">
+        <p>Player 2:</p>
+        <p>Round Score: <span id="output-player2-round-score"></span></p>
+        <p>Total Score: <span id="output-player2-total-score"></span></p>
+        <form id="btn-Player-2">
+          <button id="player2-Roll"  type="button" class="btn btn-danger" value="ROLL">Roll Dice</button>
+          <button id="player2-Hold"  type="button" class="btn btn-success" value="HOLD">Hold Score</button>
+        </form>
+      </div>
 
   </body>
 </html>
