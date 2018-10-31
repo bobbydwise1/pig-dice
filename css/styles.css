@@ -1,3 +1,17 @@
 .players-window {
   border: 2px solid black;
 }
+
+
+.twoPlayerView {
+  display: none;
+}
+
+
+#threePlayerView {
+  display: none;
+}
+
+#fourPlayerView {
+  display: none;
+}

@@ -14,7 +14,17 @@
   <body>
     <h1>Pig Dice</h1>
     <p>Insert Text Here for Rules</p>
-      <div class="container players-window">
+
+    <form id="playerSelect">
+      <select class="form-control" id="selectNumberPlayers">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+    <button id="playerSelectButton" type="submit" class="btn btn-warning" value="Submit">Submit</button>
+    </form>
+
+      <div class="container players-window player-window-1 twoPlayerView">
         <p>Player 1</p>
         <p>Round Score: <span id="output-player1-round-score"></span></p>
         <p>Total Score: <span id="output-player1-total-score"></span></p>
@@ -23,13 +33,31 @@
           <button id="player1-Hold" type="button" class="btn btn-success" value="HOLD">Hold Score</button>
         </form>
       </div>
-      <div class="container players-window">
+      <div class="container players-window player-window-2 twoPlayerView">
         <p>Player 2:</p>
         <p>Round Score: <span id="output-player2-round-score"></span></p>
         <p>Total Score: <span id="output-player2-total-score"></span></p>
         <form id="btn-Player-2">
           <button id="player2-Roll"  type="button" class="btn btn-danger" value="ROLL">Roll Dice</button>
           <button id="player2-Hold"  type="button" class="btn btn-success" value="HOLD">Hold Score</button>
+        </form>
+      </div>
+      <div class="container players-window player-window-3" id="threePlayerView">
+        <p>Player 3:</p>
+        <p>Round Score: <span id="output-player3-round-score"></span></p>
+        <p>Total Score: <span id="output-player3-total-score"></span></p>
+        <form id="btn-Player-3">
+          <button id="player3-Roll"  type="button" class="btn btn-danger" value="ROLL">Roll Dice</button>
+          <button id="player3-Hold"  type="button" class="btn btn-success" value="HOLD">Hold Score</button>
+        </form>
+      </div>
+      <div class="container players-window player-window-4" id="fourPlayerView">
+        <p>Player 4:</p>
+        <p>Round Score: <span id="output-player4-round-score"></span></p>
+        <p>Total Score: <span id="output-player4-total-score"></span></p>
+        <form id="btn-Player-4">
+          <button id="player4-Roll"  type="button" class="btn btn-danger" value="ROLL">Roll Dice</button>
+          <button id="player4-Hold"  type="button" class="btn btn-success" value="HOLD">Hold Score</button>
         </form>
       </div>
 
