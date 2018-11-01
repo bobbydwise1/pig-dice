@@ -1,3 +1,8 @@
+// BUSINESS LOGIC -----------
+
+var diceShowUI = 0;
+
+// GameGroup constructor and methods -----------
 function GameGroup() {
   this.pigplayers = [],
   this.currentID = 0
@@ -21,7 +26,6 @@ GameGroup.prototype.turnCheck = function(player) {
         return "";
     }
   }
-
   for (var i = (player.id-1); i < this.pigplayers.length; i++) {
     console.log(i);
     if (player.turnStatus === false) {
@@ -32,6 +36,8 @@ GameGroup.prototype.turnCheck = function(player) {
   }
 }
 
+
+// Player constructor and methods -----------
 function Player(totalScore, roundScore, diceRollResult, turnStatus) {
   this.totalScore = totalScore,
   this.roundScore = roundScore,
@@ -39,7 +45,6 @@ function Player(totalScore, roundScore, diceRollResult, turnStatus) {
   this.turnStatus = turnStatus
 }
 
-var diceShowUI = 0;
 
 Player.prototype.rollDice = function(group) {
   if (this.turnStatus === false) {
@@ -82,6 +87,7 @@ Player.prototype.playerHold = function (group) {
   group.turnCheck(this);
   if (this.totalScore >= 100) {
     console.log("You won the game!")
+
   } else {
     this.turnStatus = false;
     return "";
