@@ -47,7 +47,17 @@
     </div>
 
     <div class="container" id="gameGrid">
-      <h1 class="jumbotron">Pig Dice</h1>
+      <div class="row" id="gameGridHeading">
+        <div class="col-md-4" id="instructions">
+          <button type="button" class="btn btn-success" value="Submit" style="vertical-align: middle; height: 60px; width: 300px; font-size: 2em">Instructions</button>
+        </div>
+        <div class="col-md-4">
+          <h1 style="vertical-align: middle">Pig Dice</h1>
+        </div>
+        <div class="col-md-4" id="reset">
+          <button type="button" class="btn btn-danger" value="Submit" style="vertical-align: middle; height: 60px; width: 300px; font-size: 2em">Reset Game</button>
+        </div>
+      </div>
       <div class="row">
         <div class="col-md-4">
 
@@ -58,9 +68,9 @@
             <img src="img/pig.png" alt="pig1" class="player-pig">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title" style="text-align: center; background-color:gray">Round Score:</h5>
+                <h5 class="card-title" style="text-align: center; background-color: rgba(229, 232, 229)">Round Score:</h5>
                 <h5 class="card-subtitle" style="font-size: 2em"><span id="output-player1-round-score">0</span></h5>
-                <h5 class="card-title" style="text-align: center; background-color:gray">Total Score:</h5>
+                <h5 class="card-title" style="text-align: center; background-color: rgba(229, 232, 229)">Total Score:</h5>
                 <h5 class="card-subtitle" style="font-size: 2em"><span id="output-player1-total-score">0</span></h5>
               </div>
             </div>
@@ -79,9 +89,9 @@
 
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title" style="text-align: center; background-color:gray">Round Score:</h5>
+                <h5 class="card-title" style="text-align: center; background-color: rgba(229, 232, 229)">Round Score:</h5>
                 <h5 class="card-subtitle" style="font-size: 2em"><span id="output-player3-round-score">0</span></h5>
-                <h5 class="card-title" style="text-align: center; background-color:gray">Total Score:</h5>
+                <h5 class="card-title" style="text-align: center; background-color: rgba(229, 232, 229)">Total Score:</h5>
                 <h5 class="card-subtitle" style="font-size: 2em"><span id="output-player3-total-score">0</span></h5>
               </div>
             </div>
@@ -91,10 +101,10 @@
             </form>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" id="diceBox">
           <div class="container">
-            <h2>Dice Roll:</h2>
-            <p><span id="show-dice">???</span></p>
+            <!-- <h2>Dice Roll:</h2> -->
+            <p style="vertical-align: middle"><span id="show-dice"></span></p>
           </div>
         </div>
         <div class="col-md-4">
@@ -103,9 +113,9 @@
             <img src="img/pig.png" alt="pig1" class="player-pig">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title" style="text-align: center; background-color:gray">Round Score:</h5>
+                <h5 class="card-title" style="text-align: center; background-color: rgba(229, 232, 229)">Round Score:</h5>
                 <h5 class="card-subtitle" style="font-size: 2em"><span id="output-player4-round-score">0</span></h5>
-                <h5 class="card-title" style="text-align: center; background-color:gray">Total Score:</h5>
+                <h5 class="card-title" style="text-align: center; background-color: rgba(229, 232, 229)">Total Score:</h5>
                 <h5 class="card-subtitle" style="font-size: 2em"><span id="output-player4-total-score">0</span></h5>
               </div>
             </div>
@@ -115,8 +125,7 @@
             </form>
           </div>
         </div>
-        <div class="col-md-4" id="reset">
-          <button type="button" class="btn btn-warning" value="Submit">Reset<br>Game</button>
+        <div class="col-md-4">
         </div>
         <div class="col-md-4">
           <div class="container players-window player-window-2 twoPlayerView">
@@ -124,9 +133,9 @@
             <img src="img/pig.png" alt="pig1" class="player-pig">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title" style="text-align: center; background-color:gray">Round Score:</h5>
+                <h5 class="card-title" style="text-align: center; background-color: rgb(229, 232, 229)">Round Score:</h5>
                 <h5 class="card-subtitle" style="font-size: 2em"><span id="output-player2-round-score">0</span></h5>
-                <h5 class="card-title" style="text-align: center; background-color:gray">Total Score:</h5>
+                <h5 class="card-title" style="text-align: center; background-color: rgba(229, 232, 229)">Total Score:</h5>
                 <h5 class="card-subtitle" style="font-size: 2em"><span id="output-player2-total-score">0</span></h5>
               </div>
             </div>
@@ -146,7 +155,7 @@
         <div class="col-md-12">
           <div class="well">
             <h2>Game Over!!!</h2>
-            <p>Player X, you won!</p>
+            <p>Player <span id="winnerName">X</span>, you won!</p>
             <button id="endGameButton" type="button" class="btn btn-warning" value="Submit">Replay</button>
           </div>
         </div>

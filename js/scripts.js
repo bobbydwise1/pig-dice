@@ -180,12 +180,22 @@ $("div#reset").on("click", "button", function() {
   $("#playerSelect").slideDown();
 });
 
+$("div#instructions").on("click", "button", function() {
+  console.log("INSTRUCTIONS");
+  event.preventDefault();
+  $("#gameGrid").hide();
+  $("#welcomeScreen").show();
+});
+
+
 $("#endGame").on("click", "button", function() {
   event.preventDefault();
   console.log("START NEW GAME BUTTON CLICKED");
   $("#endGame").slideUp();
   $("#playerSelect").slideDown();
 });
+
+
 
 
   $("#gameGrid").on("click", "button", function() {
@@ -221,6 +231,16 @@ $("#endGame").on("click", "button", function() {
     if(pigGame.winStatus === true) {
       $("#gameGrid").slideUp();
       $("#endGame").slideDown();
+
+      var pigWinner = "";
+
+      for(var i=0; i < pigGame.pigplayers.length; i++) {
+        if(pigGame.pigplayers[i].turnStatus === true) {
+          pigWinner = "Player " + (i);
+        }
+        console.log(pigWinner);
+      }
+      $("#winnerName").text(pigGame.pigplayers.length);
 
       for(var i = 1; i <=pigGame.pigplayers.length; i++) {
           $("span#output-player" + i + "-round-score").text(0);

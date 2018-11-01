@@ -1,12 +1,39 @@
 body {
   text-align: center;
 }
+button {
+  border: 2px solid black;
+}
+
+#gameGridHeading {
+  background: rgba(255, 255, 255, 0.1);
+  height: 100px;
+}
+
+#diceBox {
+  height: 260px;
+
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border: 1px solid green;
+}
+
+#show-dice {
+  margin-top: 125px;
+}
 
 #welcomeScreen {
+  width: 1040px;
+  height: 1036px;
   display: none;
 }
 
 #playerSelect {
+  width: 1040px;
+  height: 1036px;
   display: none;
 }
 
@@ -15,6 +42,8 @@ body {
 }
 
 #endGame {
+  width: 1040px;
+  height: 1036px;
   display: none;
 }
 
@@ -33,16 +62,19 @@ body {
   background-image: url(../img/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 50px;
 }
 
-#playerGrid button{
-  margin-top: 100px;
+#gameGrid button{
+  margin: 20px;
+
 }
 
-#playerGrid {
-  margin: 30px;
+#gameGrid {
+  /* margin: 30px; */
   border: 2px solid black;
 }
+
 #threePlayerView {
   display: none;
 }
@@ -53,6 +85,10 @@ body {
 
 #winButton {
   display: none;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .jumbotron {
@@ -67,52 +103,54 @@ body {
     border-radius: 35%;
     background-color: rgba(255, 255, 255, 0.15);
     position: relative;
-    /* top: 50%;
-    left: 50%; */
+    /* top: 50%; */
+    /* left: 50%; */
     /* transform: translate(-10%, -30%); */
+    margin-top: 5%;
+    margin-right: 8%;
 }
 
 
 .dice-1 {
-  font-size: 4em;
+  font-size: 5em;
+    margin-top: 80px;
   /* display: none; */
 }
 
 .dice-2 {
-  font-size: 4em;
+  font-size: 5em;
+    margin-top: 80px;
   /* display: none; */
 }
 
 .dice-3 {
-  font-size: 4em;
+  font-size: 5em;
+    margin-top: 80px;
   /* display: none; */
 }
 
 .dice-4 {
-  font-size: 4em;
-  /* display: none; */
+  font-size: 5em;
+    margin-top: 80px;
 }
 
 .dice-5 {
-  font-size: 4em;
-  /* display: none; */
+  font-size: 5em;
+    margin-top: 80px;
 }
 
 .dice-6 {
-  font-size: 4em;
-  /* display: none; */
+  font-size: 5em;
+    margin-top: 80px;
 }
 
-.players-window {
-  /* border: 2px solid black; */
-}
 
 .twoPlayerView {
   display: none;
 }
 
 .col-md-4 {
-  width: 300px;
-  height: 300px;
+  width: auto;
+  height: auto;
 
 }
