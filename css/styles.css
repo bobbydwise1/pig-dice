@@ -2,20 +2,104 @@ body {
   text-align: center;
 }
 
+.player-pig {
+  width: 30%;
+  float: left;
+  /* mix-blend-mode: multiply; */
+
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-10%, -30%);
+}
+
+.hide-bust {
+  display: none;
+}
+
+
+
+.dice-1 {
+  font-size: 4em;
+  display: none;
+}
+
+.dice-2 {
+  font-size: 4em;
+  display: none;
+}
+
+.dice-3 {
+  font-size: 4em;
+  display: none;
+}
+
+.dice-4 {
+  font-size: 4em;
+  display: none;
+}
+
+.dice-5 {
+  font-size: 4em;
+  display: none;
+}
+
+.dice-6 {
+  font-size: 4em;
+  display: none;
+}
+
+
+
+
 .players-window {
   border: 2px solid black;
 }
 
+#selectNumberPlayers {
+  width: 200px;
+  float: left;
+  margin-left: 400px;
+}
+
+#playerSelectButton {
+  float: left;
+}
+
+#containsAll {
+  background-image: url(../img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .twoPlayerView {
   display: none;
 }
 
+.col-md-4 {
+  width: 300px;
+  height: 300px;
 
+}
+
+#playerGrid button{
+  margin-top: 100px;
+}
+
+
+
+#playerGrid {
+  margin: 30px;
+  border: 2px solid black;
+}
 #threePlayerView {
   display: none;
 }
 
 #fourPlayerView {
+  display: none;
+}
+
+#winButton {
   display: none;
 }

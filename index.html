@@ -6,65 +6,131 @@
       crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/dice-1.0.min.css"/>
     <link rel="stylesheet" href="css/styles.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pig Dice</title>
   </head>
   <body>
-    <h1>Pig Dice</h1>
-    <p>Insert Text Here for Rules</p>
+    <div class="container" id="containsAll">
+
     <div class="container">
-    <form id="playerSelect">
-      <select class="form-control" id="selectNumberPlayers">
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-      </select>
-    <button id="playerSelectButton" type="submit" class="btn btn-warning" value="Submit">Submit</button>
-    </div>
-    <div class="container">
-    <h2>Dice Roll:</h2>
-    <p id="show-dice">???</p>
-    <div class="container">
-    </form>
-    <div class="container" id=>
-      <div class="container players-window player-window-1 twoPlayerView">
-        <p>Player 1</p>
-        <p>Round Score: <span id="output-player1-round-score"></span></p>
-        <p>Total Score: <span id="output-player1-total-score"></span></p>
-        <form id="btn-Player-1">
-          <button id="player1-Roll" type="button" class="btn btn-danger" value="ROLL">Roll Dice</button>
-          <button id="player1-Hold" type="button" class="btn btn-success" value="HOLD">Hold Score</button>
+      <div class="row">
+        <div class="col-md-12">
+
+        <h1 class="jumbotron">Pig Dice</h1>
+        <p>Insert Text Here for Rules</p>
+        <form id="playerSelect">
+          <select class="form-control" id="selectNumberPlayers">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        <button id="playerSelectButton" type="submit" class="btn btn-warning" value="Submit">Submit</button>
+      </form>
+        <!-- <div class="container">
+          <h2>Dice Roll: <span id="show-dice">???</span></h2>
+        </div> -->
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row" id="playerGrid">
+          <div class="col-md-4">
+            <h1>block 1</h1>
+          </div>
+          <div class="col-md-4">
+            <h1>Player 1</h1>
+            <div class="container players-window player-window-1 twoPlayerView">
+              <img src="img/pig.png" alt="pig1" class="player-pig">
+              <p>Round Score: <span id="output-player1-round-score"></span></p>
+              <p>Total Score: <span id="output-player1-total-score"></span></p>
+              <form id="btn-Player-1">
+                <button id="playerOneRoll" type="button" class="btn btn-danger" value="1-roll">Roll Dice</button>
+                <button id="playerOneHold" type="button" class="btn btn-success" value="1-hold">Hold Score</button>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h1>block 3</h1>
+          </div>
+          <div class="col-md-4">
+            <h1>Player 3</h1>
+            <div class="container players-window player-window-3" id="threePlayerView">
+              <img src="img/pig.png" alt="pig1" class="player-pig">
+              <p>Round Score: <span id="output-player3-round-score"></span></p>
+              <p>Total Score: <span id="output-player3-total-score"></span></p>
+              <form id="btn-Player-3">
+                <button id="playerThreeRoll"  type="button" class="btn btn-danger" value="ROLL">Roll Dice</button>
+                <button id="playerThreeHold"  type="button" class="btn btn-success" value="HOLD">Hold Score</button>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h1>block 5</h1>
+            <div class="container">
+              <h2>Dice Roll: <span id="show-dice">???</span></h2>
+              <p>
+              <span class="dice dice-1" title="Dice 1"></span>
+              <span class="dice dice-2" title="Dice 2"></span>
+              <span class="dice dice-3" title="Dice 3"></span>
+              <span class="dice dice-4" title="Dice 4"></span>
+              <span class="dice dice-5" title="Dice 5"></span>
+              <span class="dice dice-6" title="Dice 6"></span>
+            </p>
+            <p class="hide-bust">BUST!</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h1>Player 4</h1>
+            <div class="container players-window player-window-4" id="fourPlayerView">
+              <img src="img/pig.png" alt="pig1" class="player-pig">
+              <p>Round Score: <span id="output-player4-round-score"></span></p>
+              <p>Total Score: <span id="output-player4-total-score"></span></p>
+              <form id="btn-Player-4">
+                <button id="playerFourRoll"  type="button" class="btn btn-danger" value="ROLL">Roll Dice</button>
+                <button id="playerFourHold"  type="button" class="btn btn-success" value="HOLD">Hold Score</button>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h1>block 7</h1>
+          </div>
+          <div class="col-md-4">
+            <h1>Player 2</h1>
+            <div class="container players-window player-window-2 twoPlayerView">
+              <img src="img/pig.png" alt="pig1" class="player-pig">
+              <p>Round Score: <span id="output-player2-round-score"></span></p>
+              <p>Total Score: <span id="output-player2-total-score"></span></p>
+              <form id="player2">
+                <button id="playerTwoRoll"  type="button" class="btn btn-danger player1" value="ROLL">Roll Dice</button>
+                <button id="playerTwoHold"  type="button" class="btn btn-success player1" value="HOLD">Hold Score</button>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-4">
+          <h1>block 9</h1>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+      <div>
+        <form>
+          <button id="winButton"  type="button" class="btn btn-danger" value="Reset">Play Again!</button>
         </form>
       </div>
-      <div class="container players-window player-window-2 twoPlayerView">
-        <p>Player 2:</p>
-        <p>Round Score: <span id="output-player2-round-score"></span></p>
-        <p>Total Score: <span id="output-player2-total-score"></span></p>
-        <form id="btn-Player-2">
-          <button id="player2-Roll"  type="button" class="btn btn-danger" value="ROLL">Roll Dice</button>
-          <button id="player2-Hold"  type="button" class="btn btn-success" value="HOLD">Hold Score</button>
-        </form>
-      </div>
-      <div class="container players-window player-window-3" id="threePlayerView">
-        <p>Player 3:</p>
-        <p>Round Score: <span id="output-player3-round-score"></span></p>
-        <p>Total Score: <span id="output-player3-total-score"></span></p>
-        <form id="btn-Player-3">
-          <button id="player3-Roll"  type="button" class="btn btn-danger" value="ROLL">Roll Dice</button>
-          <button id="player3-Hold"  type="button" class="btn btn-success" value="HOLD">Hold Score</button>
-        </form>
-      </div>
-      <div class="container players-window player-window-4" id="fourPlayerView">
-        <p>Player 4:</p>
-        <p>Round Score: <span id="output-player4-round-score"></span></p>
-        <p>Total Score: <span id="output-player4-total-score"></span></p>
-        <form id="btn-Player-4">
-          <button id="player4-Roll"  type="button" class="btn btn-danger" value="ROLL">Roll Dice</button>
-          <button id="player4-Hold"  type="button" class="btn btn-success" value="HOLD">Hold Score</button>
-        </form>
-      </div>
-    </div>
+
+
+
+  </div>
   </body>
 </html>
