@@ -65,6 +65,7 @@ GameGroup.prototype.turnCheck = function(player) {
 GameGroup.prototype.reset = function() {
   this.currentID = 0;
   this.pigplayers = [];
+  this.winStatus = false;
 }
 
 // Player constructor and methods -----------
@@ -136,36 +137,58 @@ $(document).ready(function() {
   $("#gameGrid").hide();
   $("#endGame").hide();
 
-
-  $("#playerSelect").submit(function(event) {
+  $("#welcomeScreen").on("click", "button", function() {
     event.preventDefault();
-    var numberPlayers = $("#selectNumberPlayers").val();
-    groupNumber = parseInt(numberPlayers);
+    console.log("INTRO BUTTON CLICKED");
+    $("#welcomeScreen").slideUp();
+    $("#playerSelect").slideDown();
+});
 
-    if(numberPlayers === "2") {
-      $(".twoPlayerView").show();
-      $("#threePlayerView").hide();
-      $("#fourPlayerView").hide();
-    } else if (numberPlayers === "3") {
-      $(".twoPlayerView").show();
-      $("#threePlayerView").show();
-      $("#fourPlayerView").hide();
-    } else if (numberPlayers === "4") {
-      $(".twoPlayerView").show();
-      $("#threePlayerView").show();
-      $("#fourPlayerView").show();
-    }
+$("#playerSelect").on("click", "button", function() {
+  event.preventDefault();
+  console.log("PLAY GAME BUTTON CLICKED");
 
-    pigGame.reset();
-    initializePlayers();
-  });
+  var numberPlayers = $("#selectNumberPlayers").val();
+  groupNumber = parseInt(numberPlayers);
+
+  if(numberPlayers === "2") {
+    $(".twoPlayerView").show();
+    $("#threePlayerView").hide();
+    $("#fourPlayerView").hide();
+  } else if (numberPlayers === "3") {
+    $(".twoPlayerView").show();
+    $("#threePlayerView").show();
+    $("#fourPlayerView").hide();
+  } else if (numberPlayers === "4") {
+    $(".twoPlayerView").show();
+    $("#threePlayerView").show();
+    $("#fourPlayerView").show();
+  }
+
+  pigGame.reset();
+  initializePlayers();
 
 
+  $("#playerSelect").slideUp();
+  $("#gameGrid").slideDown();
+});
 
-// test start
+$("div#reset").on("click", "button", function() {
+  event.preventDefault();
+  console.log("RESET BUTTON CLICKED");
+  $("#gameGrid").slideUp();
+  $("#playerSelect").slideDown();
+});
+
+$("#endGame").on("click", "button", function() {
+  event.preventDefault();
+  console.log("START NEW GAME BUTTON CLICKED");
+  $("#endGame").slideUp();
+  $("#playerSelect").slideDown();
+});
 
 
-  $(".row#playerGrid").on("click", "button", function() {
+  $("#gameGrid").on("click", "button", function() {
 
     if(this.id === 'playerOneRoll' || this.id === 'playerOneHold'){
       activePlayerButton = 1;
@@ -179,16 +202,30 @@ $(document).ready(function() {
 
     if(this.id.includes("Roll")){
       pigGame.pigplayers[activePlayerButton - 1].rollDice(pigGame);
-      $("#show-dice").text(diceShowUI);
-      $(".dice").hide();
-      $(".dice-" + diceShowUI).show();
+      // $("#show-dice").text(diceShowUI);
+      // $(".dice").hide();
+      // $(".dice-" + diceShowUI).show();
+      $("#show-dice").html('<span class="dice dice-' + diceShowUI + '" title="Dice ' + diceShowUI +'"></span>');
+
+
       $("span#output-player"+activePlayerButton+"-round-score").text(pigGame.pigplayers[activePlayerButton - 1].roundScore);
       $("span#output-player"+activePlayerButton+"-total-score").text(pigGame.pigplayers[activePlayerButton - 1].totalScore);
+
     } else if(this.id.includes("Hold")) {
       pigGame.pigplayers[activePlayerButton - 1].playerHold(pigGame);
-      $(".dice").hide();
+      // $(".dice").hide();
       $("span#output-player"+activePlayerButton+"-round-score").text(pigGame.pigplayers[activePlayerButton - 1].roundScore);
       $("span#output-player"+activePlayerButton+"-total-score").text(pigGame.pigplayers[activePlayerButton - 1].totalScore);
+    }
+
+    if(pigGame.winStatus === true) {
+      $("#gameGrid").slideUp();
+      $("#endGame").slideDown();
+
+      for(var i = 1; i <=pigGame.pigplayers.length; i++) {
+          $("span#output-player" + i + "-round-score").text(0);
+          $("span#output-player" + i + "-total-score").text(0);
+        }
     }
 
   });

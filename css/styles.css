@@ -61,52 +61,50 @@ body {
   font-size: 5em;
 }
 .player-pig {
-  width: 30%;
+  width: 40%;
   float: left;
   /* mix-blend-mode: multiply; */
-
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translate(-10%, -30%);
+    border-radius: 35%;
+    background-color: rgba(255, 255, 255, 0.15);
+    position: relative;
+    /* top: 50%;
+    left: 50%; */
+    /* transform: translate(-10%, -30%); */
 }
 
-.hide-bust {
-  display: none;
-}
 
 .dice-1 {
   font-size: 4em;
-  display: none;
+  /* display: none; */
 }
 
 .dice-2 {
   font-size: 4em;
-  display: none;
+  /* display: none; */
 }
 
 .dice-3 {
   font-size: 4em;
-  display: none;
+  /* display: none; */
 }
 
 .dice-4 {
   font-size: 4em;
-  display: none;
+  /* display: none; */
 }
 
 .dice-5 {
   font-size: 4em;
-  display: none;
+  /* display: none; */
 }
 
 .dice-6 {
   font-size: 4em;
-  display: none;
+  /* display: none; */
 }
 
 .players-window {
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
 .twoPlayerView {

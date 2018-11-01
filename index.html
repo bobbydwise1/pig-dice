@@ -18,126 +18,140 @@
 
 
 
-      <div class="container" id="welcomeScreen">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="well">
-              <h2>How to Play</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <button id="welcomeButton" type="button" class="btn btn-warning" value="Submit">Continue</button>
-            </div>
+    <div class="container" id="welcomeScreen">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="well">
+            <h2>How to Play</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <button id="welcomeButton" type="button" class="btn btn-warning" value="button">Continue</button>
           </div>
         </div>
       </div>
+    </div>
 
-        <div class="container" id="playerSelect">
-          <div class="row">
-            <div class="col-md-12">
-              <h2>Select game type:</h2>
-              <form id="playerSelect">
-                <select class="form-control" id="selectNumberPlayers">
-                  <option value="2">2-Player</option>
-                  <option value="3">3-Player</option>
-                  <option value="4">4-Player</option>
-                </select>
-                <button id="playerSelectButton" type="submit" class="btn btn-warning" value="Submit">Let's Play!</button>
-              </form>
-            </div>
-            </div>
+    <div class="container" id="playerSelect">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Select game type:</h2>
+          <form id="dropDownSelect">
+            <select class="form-control" id="selectNumberPlayers">
+              <option value="2">2-Player</option>
+              <option value="3">3-Player</option>
+              <option value="4">4-Player</option>
+            </select>
+            <button id="playerSelectButton" type="submit" class="btn btn-warning" value="Submit">Let's Play!</button>
+          </form>
         </div>
+      </div>
+    </div>
 
-      <div class="container" id="gameGrid">
-        <h1 class="jumbotron">Pig Dice</h1>
-        <div class="row">
-          <div class="col-md-4">
-            <h1>block 1</h1>
-          </div>
-          <div class="col-md-4">
+    <div class="container" id="gameGrid">
+      <h1 class="jumbotron">Pig Dice</h1>
+      <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+          <div class="container players-window player-window-1 twoPlayerView">
             <h1>Player 1</h1>
-            <div class="container players-window player-window-1 twoPlayerView">
-              <img src="img/pig.png" alt="pig1" class="player-pig">
-              <p>Round Score: <span id="output-player1-round-score"></span></p>
-              <p>Total Score: <span id="output-player1-total-score"></span></p>
-              <form id="btn-Player-1">
-                <button id="playerOneRoll" type="button" class="btn btn-danger" value="1-roll">Roll Dice</button>
-                <button id="playerOneHold" type="button" class="btn btn-success" value="1-hold">Hold Score</button>
-              </form>
+            <img src="img/pig.png" alt="pig1" class="player-pig">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title" style="text-align: center; background-color:gray">Round Score:</h5>
+                <h5 class="card-subtitle" style="font-size: 2em"><span id="output-player1-round-score">0</span></h5>
+                <h5 class="card-title" style="text-align: center; background-color:gray">Total Score:</h5>
+                <h5 class="card-subtitle" style="font-size: 2em"><span id="output-player1-total-score">0</span></h5>
+              </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <h1>block 3</h1>
-          </div>
-          <div class="col-md-4">
+          <form id="btn-Player-1">
+            <button id="playerOneRoll" type="button" class="btn btn-danger" value="1-roll">Roll Dice</button>
+            <button id="playerOneHold" type="button" class="btn btn-success" value="1-hold">Hold Score</button>
+          </form>
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+          <div class="container players-window player-window-3" id="threePlayerView">
             <h1>Player 3</h1>
-            <div class="container players-window player-window-3" id="threePlayerView">
-              <img src="img/pig.png" alt="pig1" class="player-pig">
-              <p>Round Score: <span id="output-player3-round-score"></span></p>
-              <p>Total Score: <span id="output-player3-total-score"></span></p>
-              <form id="btn-Player-3">
-                <button id="playerThreeRoll"  type="button" class="btn btn-danger" value="ROLL">Roll Dice</button>
-                <button id="playerThreeHold"  type="button" class="btn btn-success" value="HOLD">Hold Score</button>
-              </form>
+            <img src="img/pig.png" alt="pig1" class="player-pig">
+
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title" style="text-align: center; background-color:gray">Round Score:</h5>
+                <h5 class="card-subtitle" style="font-size: 2em"><span id="output-player3-round-score">0</span></h5>
+                <h5 class="card-title" style="text-align: center; background-color:gray">Total Score:</h5>
+                <h5 class="card-subtitle" style="font-size: 2em"><span id="output-player3-total-score">0</span></h5>
+              </div>
             </div>
+            <form id="btn-Player-3">
+              <button id="playerThreeRoll"  type="button" class="btn btn-danger" value="ROLL">Roll Dice</button>
+              <button id="playerThreeHold"  type="button" class="btn btn-success" value="HOLD">Hold Score</button>
+            </form>
           </div>
-          <div class="col-md-4">
-            <h1>block 5</h1>
-            <div class="container">
-              <h2>Dice Roll: <span id="show-dice">???</span></h2>
-              <p>
-                <span class="dice dice-1" title="Dice 1"></span>
-                <span class="dice dice-2" title="Dice 2"></span>
-                <span class="dice dice-3" title="Dice 3"></span>
-                <span class="dice dice-4" title="Dice 4"></span>
-                <span class="dice dice-5" title="Dice 5"></span>
-                <span class="dice dice-6" title="Dice 6"></span>
-              </p>
-              <p class="hide-bust">BUST!</p>
-            </div>
+        </div>
+        <div class="col-md-4">
+          <div class="container">
+            <h2>Dice Roll:</h2>
+            <p><span id="show-dice">???</span></p>
           </div>
-          <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+          <div class="container players-window player-window-4" id="fourPlayerView">
             <h1>Player 4</h1>
-            <div class="container players-window player-window-4" id="fourPlayerView">
-              <img src="img/pig.png" alt="pig1" class="player-pig">
-              <p>Round Score: <span id="output-player4-round-score"></span></p>
-              <p>Total Score: <span id="output-player4-total-score"></span></p>
-              <form id="btn-Player-4">
-                <button id="playerFourRoll"  type="button" class="btn btn-danger" value="ROLL">Roll Dice</button>
-                <button id="playerFourHold"  type="button" class="btn btn-success" value="HOLD">Hold Score</button>
-              </form>
+            <img src="img/pig.png" alt="pig1" class="player-pig">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title" style="text-align: center; background-color:gray">Round Score:</h5>
+                <h5 class="card-subtitle" style="font-size: 2em"><span id="output-player4-round-score">0</span></h5>
+                <h5 class="card-title" style="text-align: center; background-color:gray">Total Score:</h5>
+                <h5 class="card-subtitle" style="font-size: 2em"><span id="output-player4-total-score">0</span></h5>
+              </div>
             </div>
+            <form id="btn-Player-4">
+              <button id="playerFourRoll"  type="button" class="btn btn-danger" value="ROLL">Roll Dice</button>
+              <button id="playerFourHold"  type="button" class="btn btn-success" value="HOLD">Hold Score</button>
+            </form>
           </div>
-          <div class="col-md-4">
-            <h1>block 7</h1>
-          </div>
-          <div class="col-md-4">
+        </div>
+        <div class="col-md-4" id="reset">
+          <button type="button" class="btn btn-warning" value="Submit">Reset<br>Game</button>
+        </div>
+        <div class="col-md-4">
+          <div class="container players-window player-window-2 twoPlayerView">
             <h1>Player 2</h1>
-            <div class="container players-window player-window-2 twoPlayerView">
-              <img src="img/pig.png" alt="pig1" class="player-pig">
-              <p>Round Score: <span id="output-player2-round-score"></span></p>
-              <p>Total Score: <span id="output-player2-total-score"></span></p>
-              <form id="player2">
-                <button id="playerTwoRoll"  type="button" class="btn btn-danger player1" value="ROLL">Roll Dice</button>
-                <button id="playerTwoHold"  type="button" class="btn btn-success player1" value="HOLD">Hold Score</button>
-              </form>
+            <img src="img/pig.png" alt="pig1" class="player-pig">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title" style="text-align: center; background-color:gray">Round Score:</h5>
+                <h5 class="card-subtitle" style="font-size: 2em"><span id="output-player2-round-score">0</span></h5>
+                <h5 class="card-title" style="text-align: center; background-color:gray">Total Score:</h5>
+                <h5 class="card-subtitle" style="font-size: 2em"><span id="output-player2-total-score">0</span></h5>
+              </div>
             </div>
+            <form id="player2">
+              <button id="playerTwoRoll"  type="button" class="btn btn-danger player1" value="ROLL">Roll Dice</button>
+              <button id="playerTwoHold"  type="button" class="btn btn-success player1" value="HOLD">Hold Score</button>
+            </form>
           </div>
-          <div class="col-md-4">
-            <h1>block 9</h1>
+        </div>
+        <div class="col-md-4">
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="endGame">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="well">
+            <h2>Game Over!!!</h2>
+            <p>Player X, you won!</p>
+            <button id="endGameButton" type="button" class="btn btn-warning" value="Submit">Replay</button>
           </div>
         </div>
       </div>
-
-      <div class="container" id="endGame">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="well">
-              <h2>Game Over!!!</h2>
-              <p>Player X, you won!</p>
-              <button id="endGameButton" type="button" class="btn btn-warning" value="Submit">Replay</button>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
 
 
 
@@ -147,14 +161,14 @@
 
 
 
-      <div>
-        <form>
-          <button id="winButton"  type="button" class="btn btn-danger" value="Reset">Play Again!</button>
-        </form>
-      </div>
+    <div>
+      <form>
+        <button id="winButton"  type="button" class="btn btn-danger" value="Reset">Play Again!</button>
+      </form>
+    </div>
 
 
 
-      </div>
-    </body>
-  </html>
+  </div>
+</body>
+</html>
