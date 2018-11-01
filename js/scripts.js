@@ -131,6 +131,10 @@ $(document).ready(function() {
   $(".twoPlayerView").hide();
   $("#threePlayerView").hide();
   $("#fourPlayerView").hide();
+  $("#welcomeScreen").show();
+  $("#playerSelect").hide();
+  $("#gameGrid").hide();
+  $("#endGame").hide();
 
 
   $("#playerSelect").submit(function(event) {

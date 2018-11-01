@@ -1,42 +1,54 @@
 <!DOCTYPE html>
 <html lang="en" >
-  <head>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"
-      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-      crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/scripts.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/dice-1.0.min.css"/>
-    <link rel="stylesheet" href="css/styles.css">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pig Dice</title>
-  </head>
-  <body>
-    <div class="container" id="containsAll">
+<head>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/scripts.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/dice-1.0.min.css"/>
+  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pig Dice</title>
+</head>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
+<body>
+  <div class="container" id="containsAll">
 
-        <h1 class="jumbotron">Pig Dice</h1>
-        <p>Insert Text Here for Rules</p>
-        <form id="playerSelect">
-          <select class="form-control" id="selectNumberPlayers">
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-          </select>
-        <button id="playerSelectButton" type="submit" class="btn btn-warning" value="Submit">Submit</button>
-      </form>
-        <!-- <div class="container">
-          <h2>Dice Roll: <span id="show-dice">???</span></h2>
-        </div> -->
+
+
+      <div class="container" id="welcomeScreen">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="well">
+              <h2>How to Play</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <button id="welcomeButton" type="button" class="btn btn-warning" value="Submit">Continue</button>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="container">
-        <div class="row" id="playerGrid">
+        <div class="container" id="playerSelect">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>Select game type:</h2>
+              <form id="playerSelect">
+                <select class="form-control" id="selectNumberPlayers">
+                  <option value="2">2-Player</option>
+                  <option value="3">3-Player</option>
+                  <option value="4">4-Player</option>
+                </select>
+                <button id="playerSelectButton" type="submit" class="btn btn-warning" value="Submit">Let's Play!</button>
+              </form>
+            </div>
+            </div>
+        </div>
+
+      <div class="container" id="gameGrid">
+        <h1 class="jumbotron">Pig Dice</h1>
+        <div class="row">
           <div class="col-md-4">
             <h1>block 1</h1>
           </div>
@@ -72,14 +84,14 @@
             <div class="container">
               <h2>Dice Roll: <span id="show-dice">???</span></h2>
               <p>
-              <span class="dice dice-1" title="Dice 1"></span>
-              <span class="dice dice-2" title="Dice 2"></span>
-              <span class="dice dice-3" title="Dice 3"></span>
-              <span class="dice dice-4" title="Dice 4"></span>
-              <span class="dice dice-5" title="Dice 5"></span>
-              <span class="dice dice-6" title="Dice 6"></span>
-            </p>
-            <p class="hide-bust">BUST!</p>
+                <span class="dice dice-1" title="Dice 1"></span>
+                <span class="dice dice-2" title="Dice 2"></span>
+                <span class="dice dice-3" title="Dice 3"></span>
+                <span class="dice dice-4" title="Dice 4"></span>
+                <span class="dice dice-5" title="Dice 5"></span>
+                <span class="dice dice-6" title="Dice 6"></span>
+              </p>
+              <p class="hide-bust">BUST!</p>
             </div>
           </div>
           <div class="col-md-4">
@@ -110,7 +122,19 @@
             </div>
           </div>
           <div class="col-md-4">
-          <h1>block 9</h1>
+            <h1>block 9</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" id="endGame">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="well">
+              <h2>Game Over!!!</h2>
+              <p>Player X, you won!</p>
+              <button id="endGameButton" type="button" class="btn btn-warning" value="Submit">Replay</button>
+            </div>
           </div>
         </div>
       </div>
@@ -131,6 +155,6 @@
 
 
 
-  </div>
-  </body>
-</html>
+      </div>
+    </body>
+  </html>

@@ -2,6 +2,64 @@ body {
   text-align: center;
 }
 
+#welcomeScreen {
+  display: none;
+}
+
+#playerSelect {
+  display: none;
+}
+
+#gameGrid {
+  display: none;
+}
+
+#endGame {
+  display: none;
+}
+
+#selectNumberPlayers {
+  width: 40%;
+  float: left;
+  margin-left: 30%;
+  margin-right: 40px;
+}
+
+#playerSelectButton {
+  float: left;
+}
+
+#containsAll {
+  background-image: url(../img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#playerGrid button{
+  margin-top: 100px;
+}
+
+#playerGrid {
+  margin: 30px;
+  border: 2px solid black;
+}
+#threePlayerView {
+  display: none;
+}
+
+#fourPlayerView {
+  display: none;
+}
+
+#winButton {
+  display: none;
+}
+
+.jumbotron {
+  background: rgba(255, 255, 255, 0.2);
+  font-family: monospace;
+  font-size: 5em;
+}
 .player-pig {
   width: 30%;
   float: left;
@@ -16,8 +74,6 @@ body {
 .hide-bust {
   display: none;
 }
-
-
 
 .dice-1 {
   font-size: 4em;
@@ -49,27 +105,8 @@ body {
   display: none;
 }
 
-
-
-
 .players-window {
   border: 2px solid black;
-}
-
-#selectNumberPlayers {
-  width: 200px;
-  float: left;
-  margin-left: 400px;
-}
-
-#playerSelectButton {
-  float: left;
-}
-
-#containsAll {
-  background-image: url(../img/background.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .twoPlayerView {
@@ -80,26 +117,4 @@ body {
   width: 300px;
   height: 300px;
 
-}
-
-#playerGrid button{
-  margin-top: 100px;
-}
-
-
-
-#playerGrid {
-  margin: 30px;
-  border: 2px solid black;
-}
-#threePlayerView {
-  display: none;
-}
-
-#fourPlayerView {
-  display: none;
-}
-
-#winButton {
-  display: none;
 }
